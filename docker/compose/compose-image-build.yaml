@@ -1,0 +1,45 @@
+services: 
+  postgres:
+    container_name: postgres
+    image: postgres:12.17
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: kubenews
+      POSTGRES_DB: kubenews
+    ports:
+      - "5432:5432"
+    volumes:      
+      - postgres_docker_vol:/var/lib/postgresql/data
+    networks:
+      - kubenews_net
+  kubee_news:
+    container_name: kubenews-app
+    image: kubedevio/kube-news
+    build: 
+      context: ./src
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - kubenews_net
+    depends_on:
+      - postgres
+    environment:
+      DB_PASSWORD: 123456
+      DB_USERNAME: kubenews
+      DB_DATABASE: kubenews
+      DB_PORT: 5432
+      DB_HOST: postgres
+    command:
+     - node
+     - server.js
+
+volumes:
+  postgres_docker_vol:
+    name: postgres_exemplo_vol
+
+networks:
+  kubenews_net:
+    name: knews_network
+    driver: bridge  

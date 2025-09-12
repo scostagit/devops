@@ -1,0 +1,6 @@
+services:
+   kubee_news:
+    container_name: kubenews-app
+    image: kubedevio/kube-news:${KUBE_NEWS_TAG:-latest}
+    ports:
+      - "8081:8081"

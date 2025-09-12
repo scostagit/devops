@@ -1,0 +1,17 @@
+services:   
+  web:
+    extends:
+      file: ./kube-news.compose.yaml
+      service: kubee_news
+      image: kubedevio/kube-news:latest
+include:
+    - ./postgres.compose.yaml
+
+volumes:
+  postgres_docker_vol:
+    name: postgres_exemplo_vol
+
+networks:
+  kubenews_net:
+    name: knews_network
+    driver: bridge  

@@ -1,0 +1,17 @@
+services:
+   kubee_news:
+    container_name: kubenews-app
+    image: kubedevio/kube-news:${KUBE_NEWS_TAG:-latest}
+    ports:
+      - "8080:8080"
+    networks:
+      - kubenews_net   
+    environment:
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      DB_USERNAME: ${POSTGRES_USER}
+      DB_DATABASE: ${POSTGRES_DB}
+      DB_PORT: 5432
+      DB_HOST: postgres
+    command:
+     - node
+     - server.js

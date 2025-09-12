@@ -1,0 +1,8 @@
+services:
+  nginx:
+    image: nginx
+    network_mode: "host"
+  curl:
+    image: nginx
+    extra_hosts:
+      aula.sergio.com: "10.0.2.15"

@@ -1,0 +1,19 @@
+FROM ubuntu
+RUN apt update 
+RUN apt install git --yes
+RUN apt install curl --yes
+RUN apt install vim --yes
+RUN apt install nginx --yes
+RUN useradd bozo
+USER bozo
+LABEL email="bozo@test.com"
+LABEL version="1.0.0"
+LABEL owner="bozo.ie"
+WORKDIR /app
+COPY arquivo.txt .
+ADD https://ge.globo.com/futebol/times/sao-paulo page.html
+ADD test.tar.gz ./
+VOLUME [ "/data" ]
+ENV VALOR_DOCKER_ENV="Valor XPTO"
+EXPOSE 80
+
