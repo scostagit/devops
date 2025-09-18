@@ -61,3 +61,12 @@ For a visual walkthrough, you might find this video helpful:
 [How to Add the Docker Scout Feature to the Docker CLI](https://www.youtube.com/watch?v=pb7ydpJq-D8&utm_source=chatgpt.com)
 
 ---
+
+
+## Links Tools
+
+[Assinar a Imgem](https://edu.chainguard.dev/chainguard/chainguard-images/getting-started/node/)
+
+[Vulnerabilidasde Docker Scout](https://scout.docker.com/reports/org/sergiodoc/images?stream=latest-indexed)
+
+[Docker hub](https://hub.docker.com/repository/docker/sergiodoc/projeto-caotico/general)
