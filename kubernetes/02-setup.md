@@ -84,3 +84,17 @@ kubectl version --client
 This will show the installed kubectl client version.
 
 ---
+
+
+## Installing the Kubernetes Cluster
+
+### K3D
+
+It uses containers docker and it is great for local environments.
+Created by K3S. 
+
+Only for testing. It is light and it is a good point to start.
+
+```powershell
+choco install k3d
+```
