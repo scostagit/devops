@@ -38,3 +38,20 @@ This does three things:
 * Downloads and runs Chocolatey's install script.
 
 ---
+
+
+
+
+### **Step 3: Verify Installation**
+
+After installation, close PowerShell and open a new **Command Prompt** or **PowerShell** window. Run:
+
+```powershell
+choco --version
+```
+
+You should see the installed version number (e.g., `1.x.x`).
+
+---
+
+Would you like me to also include instructions for installing it **completely offline** (using the `.nupkg` file)? This can be useful for air-gapped systems.
