@@ -41,7 +41,6 @@ This does three things:
 
 
 
-
 ### **Step 3: Verify Installation**
 
 After installation, close PowerShell and open a new **Command Prompt** or **PowerShell** window. Run:
