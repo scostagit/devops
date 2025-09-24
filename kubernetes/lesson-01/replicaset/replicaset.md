@@ -22,7 +22,7 @@ While you can use a ReplicaSet directly, it's rarely done in practice. In most c
 * **ReplicaSet:** Focuses on maintaining a stable count of pods. It does **not** handle rolling updates, rollbacks, or other advanced deployment strategies.
 * **Deployment:** Manages the entire lifecycle of your application. When you update a Deployment's configuration (e.g., change the container image), it automatically creates a new ReplicaSet, gradually scales down the old one, and scales up the new one, ensuring a smooth, zero-downtime update. This makes Deployments the standard way to deploy applications in Kubernetes.
 
-![](../images/04.png)
+![](../../images/04.png)
 
 # Labels and Selectors
 

@@ -1,7 +1,4 @@
-# First Steps
-
-
-## PODs
+# PODs
 
 The smallst unit in Kuberntes
 
@@ -199,7 +196,7 @@ This video provides a practical explanation of how to use labels and selectors t
 `https://www.youtube.com/watch?v=ndzhtFtJT9A`
 http://googleusercontent.com/youtube_content/0
 
-![](../images/05.png)
+![](../../images/05.png)
 
 
 ## Using Selectors:
