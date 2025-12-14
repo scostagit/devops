@@ -49,7 +49,8 @@ Mapping Ports:
 
 k3d cluster create myCluster --servers 3 --agents 3 -p "8080:30000@loadbalancer"
 
-
+# THIS COMMAND IS THE BEST
+k3d cluster create mycluster --servers 3 --agents 3 --port "8082:30080@loadbalancer:*" --api-port localhost:6443
 
 k3d kubeconfig get myCluster | Out-File -Encoding ascii $HOME\.kube\config
 
@@ -330,3 +331,13 @@ Alternatively, you can delete the cluster and recreate it, specifying the port b
 `k3d cluster create myCluster --servers 2 --agents 2 --port "8082:30080@agent:*" --api-port localhost:6443`
 
 This will ensure the `kubeconfig` is generated with `localhost` as the server address from the beginning.
+
+
+## Check the kubernetes components
+
+
+```bash
+
+kubectl api-resources
+
+```

@@ -215,3 +215,53 @@ kubectl get pods -l version=blue
 kubectl get pods -l version=green
 
 ```
+
+## POD Logs
+
+```powershell
+
+# returns 2
+kubectl logs [POD-NAME]
+
+
+kubectl logs mydeployment-54d6d7db5b-ztn5f
+[2025-12-14 18:49:38 +0000] [1] [INFO] Starting gunicorn 20.0.4
+[2025-12-14 18:49:38 +0000] [1] [INFO] Listening at: http://0.0.0.0:80 (1)
+[2025-12-14 18:49:38 +0000] [1] [INFO] Using worker: sync
+[2025-12-14 18:49:38 +0000] [8] [INFO] Booting worker with pid: 8
+[2025-12-14 18:49:38 +0000] [9] [INFO] Booting worker with pid: 9
+[2025-12-14 18:49:38 +0000] [10] [INFO] Booting worker with pid: 10
+
+```
+
+## ACCESSING THE POD 
+
+```powershell
+
+
+kubectl exec [POD-NAME] -- ls
+
+kubectl exec mydeployment-54d6d7db5b-ztn5f -- ls
+
+Dockerfile
+app.py
+requirements.txt
+templates
+
+```
+
+### interative mode
+
+
+
+```powershell
+
+
+
+kubectl exec -it [POD-NAME] -- /bin/bash
+
+
+kubectl exec -it mydeployment-54d6d7db5b-ztn5f -- /bin/bash
+
+
+```

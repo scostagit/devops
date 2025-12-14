@@ -30,6 +30,6 @@ kubectl port-forward mydeployment-54d6d7db5b-7nqq8  8080:80
 
 kubectl apply -f replicaset.yaml; while ($true) {Clear-Host; kubectl get po; Start-Sleep -Seconds 2}
 
-
+kubectl get deployments -o yaml
 
 ```
