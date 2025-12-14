@@ -31,7 +31,7 @@ spec:
     app: web
   ports:
   - port: 80 # Port of my Service
-    targetPort: 80 # POD port (it redirects to the POD port)
+    targetPort: 80 # Container port (it redirects to the POD port)
     name: http
     protocol: TCP
     nodePort: 30080 #fixing the port
