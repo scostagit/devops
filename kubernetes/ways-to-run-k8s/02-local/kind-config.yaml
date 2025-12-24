@@ -1,0 +1,24 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  disableDefaultCNI: true # I disabled this one, we should install calico
+nodes:
+  - role: control-plane
+    image: kindest/node:v1.34.3
+    extraPortMappings:
+      - containerPort: 30000
+        hostPort: 8080
+        listenAddress: "0.0.0.0"
+        protocol: TCP
+  - role: control-plane
+    image: kindest/node:v1.34.3
+  - role: control-plane
+    image: kindest/node:v1.34.3
+  - role: worker
+    image: kindest/node:v1.34.3
+  - role: worker
+    image: kindest/node:v1.34.3
+  - role: worker
+    image: kindest/node:v1.34.3
+  - role: worker
+    image: kindest/node:v1.34.3
