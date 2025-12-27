@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+   APP_NAME_CONFIG: "My kubernetes application Config map 2"
+   APP_VERSION_CONFIG: "5.5"
+   APP_AUTHOR_CONFIG: "Helena Zoe"
