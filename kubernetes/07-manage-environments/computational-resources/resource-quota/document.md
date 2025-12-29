@@ -69,4 +69,6 @@ spec:
 
 # Take aways
 
-The resource quota is a level of namaspace
+- The resource quota is a level of namaspace
+- Create the Load test for your app, get the parameters from there. and set your max and min.
+
