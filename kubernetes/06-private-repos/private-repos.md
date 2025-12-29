@@ -55,7 +55,7 @@ command line
 # this approch works for all private repo such as azure aks, EC2, jfrog docker hub and so on
 
 
- kubectl create secret docker-registry docker-auth --docker-server=https://index.docker.io/v1/ --docker-username=sergiodoc --docker-email=serjinho.costa@gmail.com --docker-password=123456 secret/docker-auth created
+ kubectl create secret docker-registry docker-auth --docker-server=https://index.docker.io/v1/ --docker-username=sergiodoc --docker-email=serjinho.costa@gmail.com --docker-password= secret/docker-auth created
 
 kubectl get secrect
 
