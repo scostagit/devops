@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: valor-padrao
+spec:
+  limits:
+    - type: Container
+      default: # Resource Limits
+        cpu: 500m
+        memory: 64M
+      defaultRequest: # Resource Request
+        cpu: 250m
+        memory: 32M
+
+---
+
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: min-max-pod
+spec:
+  limits:
+    - type: Pod
+      max: 
+        cpu: 250m
+        memory: 512M
+      min: 
+        cpu: 100m
+        memory: 250M

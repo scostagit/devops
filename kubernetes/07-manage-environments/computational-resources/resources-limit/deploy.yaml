@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simulador-do-caos
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simulador-do-caos
+  template:
+    metadata:
+      labels:
+        app: simulador-do-caos
+    spec:
+      containers:
+      - name: simulador-do-caos
+        image: kubedevio/simulador-do-caos:v1
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            cpu: "500m" #half a cup
+            memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simulador-do-caos
+spec:
+  selector:
+    app: simulador-do-caos
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3000
+    name: http
+    protocol: TCP
+    nodePort: 3000

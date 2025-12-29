@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 5 
+  selector: 
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web
+        image: kubedevio/web-color:blue
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: 2Gi
+            cpu: "2"
+          limits:
+            memory: 2Gi
+            cpu: "2"
+      - name: nginx
+        image: nginx      
+        resources:
+          requests:
+            memory: 250M
+            cpu: 100m
+          limits:
+            memory: 512M
+            cpu: 250m
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+spec:
+  selector:
+    app: web
+  ports:
+  - port: 80
+    targetPort: 80
