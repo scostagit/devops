@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: db-pv-nfs
+spec:
+  capacity:
+    storage: 4Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-static-storage
+  mountOptions:
+    - hard
+    - nolock
+  nfs:
+    server: 192.168.63.62 #my ubuntu vm
+    path: /mnt/nfs_shared

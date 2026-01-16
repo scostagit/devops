@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: storagelimit
+spec:
+  limits:
+    - type: PersistentVolumeClaim
+      max:
+        storage: 6Gi
+      min:
+        storage: 4Gi
