@@ -1,0 +1,88 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-path
+  annotations: 
+    nginx..ingress.kubernetes.oi/rewrite-target: / 
+  spec:
+    ingressClassName: nginx
+    rules:
+    - http:
+        paths:
+        - path: /blue
+          pathType: Prefix
+          backend:
+            service:
+              name: web-blue
+              port:
+                number: 80
+        - path: /green
+          pathType: Prefix
+          backend:
+            service:
+              name: web-green
+              port:
+                number: 80
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-default
+spec:
+  ingressClassName: nginx
+  defaultBackend:
+    service:
+      name: nginx
+      port:
+        number: 80
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-domain
+  annotations: 
+    nginx..ingress.kubernetes.oi/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  defaultBackend:
+    service:
+      name: nginx
+      port:
+        number: 80
+  rules:
+  - host: blue.color.127.0.0.1.nip.io  put your domain here
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: web-blue
+            port:
+              number: 80
+      - path: /green
+        pathType: Prefix
+        backend:
+          service:
+            name: web-green
+            port:
+              number: 80
+  - host: green.color.127.0.0.1.nip.io # put your domain here
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: web-green
+            port:
+              number: 80
+      - path: /green
+        pathType: Prefix
+        backend:
+          service:
+            name: web-green
+            port:
+              number: 80

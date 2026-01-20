@@ -46,7 +46,7 @@ git merge origin/master
 
 # --- Rebase ---
 # Rebase applies commits from your branch on top of another branch
-# ⚠️ WARNING: Do NOT rebase master branch
+#  WARNING: Do NOT rebase master branch
 git rebase master
 
 # --- Cherry-pick ---
